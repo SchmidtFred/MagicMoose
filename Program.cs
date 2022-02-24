@@ -67,8 +67,11 @@ void IntializeList() {
 
 void AskMoose() {
     MooseSays("Ask me anything, I know all.");
-    Console.ReadLine();
-
-    int randomNumber = randomizer.Next(20);
-    MooseSays(responseList[randomNumber]);
+    string question = Console.ReadLine();
+    while (question != "") {
+        int randomNumber = randomizer.Next(20);
+        MooseSays(responseList[randomNumber]);
+        Console.WriteLine("Ask me another. I know all.");
+        question = Console.ReadLine();
+    }
 }
